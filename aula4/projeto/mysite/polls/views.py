@@ -8,7 +8,7 @@ def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
 
 def detail(request):
-    return HttpResponse("DETAIL.")
+    return HttpResponse("Pagina de detail")
 
 def contact(request):
-    return HttpResponse("CONTACT.")
+    return HttpResponse("Pagina de contact")
