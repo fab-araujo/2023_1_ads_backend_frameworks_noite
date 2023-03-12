@@ -3,11 +3,12 @@ from django.shortcuts import render
 # Create your views here.
 from django.http import HttpResponse
 
+
 def index(request):
-    return HttpResponse("Olá, mundo!")
+    return HttpResponse("Hello, world. You're at the polls index.")
 
 def detail(request):
-    return HttpResponse("Página detail!")
+    return HttpResponse("Pagina de detail")
 
 def contact(request):
-    return HttpResponse("Página contact!")
+    return HttpResponse("Pagina de contact")
