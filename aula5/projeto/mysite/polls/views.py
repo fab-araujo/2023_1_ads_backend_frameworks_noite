@@ -5,10 +5,17 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    context = {}
+    return render(request, 'index.html', context)
 
-def detail(request):
-    return HttpResponse("Pagina de detail")
+def detail(request, question_id):
+    context = {}
+    return render(request, 'detail.html', context)
 
-def contact(request):
-    return HttpResponse("Pagina de contact")
+def results(request, question_id):
+    context = {}
+    return render(request, 'results.html', context)
+
+def vote(request, question_id):
+    context = {}
+    return render(request, 'vote.html', context)
