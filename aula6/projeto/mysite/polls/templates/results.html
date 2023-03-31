@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>Resultados da pergunta: {{pergunta.question_text}}</h1>
+{% for resposta in respostas %}
+    <p>
+        {{resposta.choice_text}}: {{resposta.votes}} votos(s)
+    </p>
+{% endfor %}
+{% endblock %}
