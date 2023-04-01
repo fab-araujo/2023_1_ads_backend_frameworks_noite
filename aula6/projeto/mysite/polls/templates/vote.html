@@ -1,16 +1,19 @@
 {% extends "base.html" %}
 {% block body %}
-<h1>Votar na pergunta: {{pergunta.question_text}}</h1>
+<h1>Vote na pergunta: {{pergunta.question_text}}</h1>
+<p>
+    <img src="{{pergunta.imagem.url}}">
+</p>
 <div>
     <form action="" method="post">
         {% csrf_token %}
         {% for resposta in respostas %}
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="voto" value="{{resposta.id}}" id="">
-                <label class="form-check-label">
-                    {{resposta.choice_text}}
-                </label>
-            </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="voto" value="{{ resposta.id }}">
+            <label class="form-check-label">
+                {{ resposta.choice_text }}
+            </label>
+        </div>
         {% endfor %}
         <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
