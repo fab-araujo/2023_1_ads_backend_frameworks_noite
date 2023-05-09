@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<h1>Questões cadastradas:</h1>
+{% for questao in questoes_template %}
+    <h2>
+        {{questao.question_text}}
+    </h2>
+    <p>
+        Publicada em: {{questao.pub_date}}
+    </p>
+    <p>
+        Publicada em: {{questao.pub_date | date:"d/m/Y H:i:s"}}
+    </p>
+    <p>
+        <a href="{% url 'detail' questao.id %}">Ver detalhes</a>
+    </p>
+    <p>
+        <a href="{% url 'results' questao.id %}">Ver resultados</a>
+    </p>
+    <p>
+        <a href="{% url 'vote' questao.id %}">Votar</a>
+    </p>
+    <hr>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>Resultados da pergunta: {{pergunta.question_text}}</h1>
+<p>
+    <img src="{{pergunta.imagem.url}}">
+</p>
+{% for resposta in respostas %}
+<p>
+    {{resposta.choice_text}}: {{resposta.votes}}
+</p>
+{% endfor %}
+{% endblock %}

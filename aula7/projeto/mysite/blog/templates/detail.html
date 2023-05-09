@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<div class="col-12">
+    <div class="card">
+        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <img src="{{post.imagem.url}}" class="img-fluid" />
+            <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{post.titulo}}</h5>
+            <p>
+                {{post.texto}}
+            </p>
+            <p>
+                {{post.pub_date}}
+            </p>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Comentários</h5>
+            {% for comentario in comentarios %}
+            <p>
+                {{comentario.texto}}
+            </p>
+            {% endfor %}
+        </div>
+        <div>
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="text" class="form-control" id="" name="comentario" placeholder="Digite seu comentário">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

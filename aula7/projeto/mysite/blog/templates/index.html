@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+{% for post in posts_template %}
+<div class="col-lg-4 col-md-12 mb-4">
+    <div class="card">
+        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <img src="{{post.imagem.url}}" class="img-fluid" />
+            <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{post.titulo}}</h5>
+            <a href="{% url 'detail' post.id %}" class="btn btn-primary">Leia +</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
